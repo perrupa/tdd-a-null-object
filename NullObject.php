@@ -4,6 +4,10 @@ trait NullPattern {
 	{
 		return $this;
 	}
+	function __call( $key, $arguments )
+	{
+		return $this;
+	}
 }
 
 class NullObject {
