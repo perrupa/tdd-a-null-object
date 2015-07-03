@@ -28,7 +28,17 @@ class NullObjectTest extends PHPUnit_Framework_TestCase
 	public function testNullObjectCanCallFunctions()
 	{
 		$this->assertNotNull( $this->subject->noFunctionHere() ,
-			'NullObject pretends to call functions like a boss.');
+			'NullObject pretends to call functions like a boss');
+		$this->assertNotNull( $this->subject->noFunctionHere()->orHere() ,
+			'NullObject pretends to call functions over and over like a boss');
+	}
+
+	public function testNullObjectCanCallFunctionsFromProperties()
+	{
+		$this->assertNotNull( $this->subject->noFunctionHere()->orProperty ,
+			'NullObject gets properties off functions');
+		$this->assertNotNull( $this->subject->noFunctionHere()->orHere() ,
+			'NullObject calls functions from fake properties');
 	}
 }
 
