@@ -38,6 +38,17 @@ class NullObjectTest extends PHPUnit_Framework_TestCase
 		$this->assertNotNull( $this->subject->noFunctionHere()->orHere() ,
 			'NullObject calls functions from fake properties');
 	}
+
+	public function testNullObjectCanStoreValues()
+	{
+		$n = new NullObject([
+			"value" => 123
+		]);
+
+		logger( "value: " . $n->value );
+
+		$this->assertEquals( "NullObject(123)", (string)$n->value, 'object properties');
+	}
 }
 
 
