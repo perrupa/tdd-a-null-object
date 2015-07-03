@@ -15,8 +15,14 @@ class NullObjectTest extends PHPUnit_Framework_TestCase
 			'Subject is a NullObject' );
 		$this->assertNotNull( $this->subject ,
 			'NullObject ain\'t null' );
+	}
+
+	public function testPropertiesArentNull()
+	{
 		$this->assertNotNull( $this->subject->imaginaryProperty ,
 			'NullObject properties are never null' );
+		$this->assertNotNull( $this->subject->imaginaryProperty->otherImaginaryProperty ,
+			'Even nested NullObject properties are never null' );
 	}
 }
 
