@@ -9,8 +9,6 @@ class NullObjectTest extends PHPUnit_Framework_TestCase
 
 	public function testthatNullObjectWorks()
 	{
-		logger( $this->subject->imaginaryProperty);
-
 		$this->assertInstanceOf( 'NullObject', $this->subject,
 			'Subject is a NullObject' );
 		$this->assertNotNull( $this->subject ,
