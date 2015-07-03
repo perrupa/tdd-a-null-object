@@ -24,6 +24,12 @@ class NullObjectTest extends PHPUnit_Framework_TestCase
 		$this->assertNotNull( $this->subject->imaginaryProperty->otherImaginaryProperty ,
 			'Even nested NullObject properties are never null' );
 	}
+
+	public function testNullObjectCanCallFunctions()
+	{
+		$this->assertNotNull( $this->subject->noFunctionHere() ,
+			'NullObject pretends to call functions like a boss.');
+	}
 }
 
 
